@@ -12,5 +12,5 @@ When we press "GO" button, green ball starts moving. When ball touches edges of 
 1. When button "GO" is pressed, function `self.repeater()` is called which repetatively calls `self.anim1()` after every 0.05 seconds.<br/>
 2. `self.anim1()` gives old position to `self.direction()` which returns x and y values where circle should be next. These new values are implemented by assigning them to `self.el.pos` which is basically an argument of ellipse.<br/>
 3. `self.direction()` decides future point. There 2 thing used to calculate direction:<br/>
-...* Magnitude: this is decided by variable `inc_pt`.
-...* Direction: +1 means countinue same direction as before, -1 means opposite direction as before.
+   * Magnitude: this is decided by variable `inc_pt`.
+   * Direction: +1 means countinue same direction as before, -1 means opposite direction as before.

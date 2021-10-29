@@ -6,4 +6,4 @@ When we press "GO" button, green ball starts moving. When ball touches edges of 
 1. python 3.6 to 3.9
 2. kivy 2.0.0 <br/><br/>
 ### Output:
-![GUI output] (D:/bounce_kivy_app.png)
+![GUI output] (D:\\programming_python)

@@ -1,0 +1,12 @@
+Foundation1:
+
+#:set size_x 60
+#:set size_y 60
+
+<Foundation1>:
+    Button:
+        text: "GO"
+        size: size_x, size_y
+        pos: (root.win_size[0] - size_x), 0
+        on_release: root.repeater()
+        disabled: root.disable_state

@@ -4,6 +4,7 @@ from kivy.uix.widget import Widget
 from kivy.core.window import Window
 from kivy.clock import Clock
 from random import random
+from kivy.properties import BooleanProperty
 
 
 class Foundation1(Widget):
@@ -13,7 +14,7 @@ class Foundation1(Widget):
     inc_pt = [2, 2]  # (magnitude) [x1, y1] ; increment x by 'x1' and y by 'y1' values
     vector1 = [1, 1]  # decides (direction) [x', y'], -1 means subtract, 1 means add
     win_size = Window.size
-    disable_state = False
+    disable_state = BooleanProperty(False)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -63,6 +64,9 @@ class Foundation1(Widget):
     def repeater(self):
         self.disable_state = True
         Clock.schedule_interval(self.anim1, 0.05)
+
+    def end_anim(self):
+        exit()
 
 
 class AutoBallApp(App):

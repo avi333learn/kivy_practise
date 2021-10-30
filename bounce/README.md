@@ -16,3 +16,7 @@ When we press "GO" button, green ball starts moving. When ball touches edges of 
    * Direction: this is either +1 or -1 and is stored in list `vector1` where `vector1[0]` is value for x and `vector1[1]` is value for y.<br/>
 
 There is default magnitide (2, 2) and default direction (1, 1). "if statement" becomes true when ball touches any wall and then value in vector1 is changed such that ball remains within visible area.
+
+### Tips:
+* Smaller the `inc_pt` values are, smoother is motion
+* Smaller the value (in seconds) inside `Clock.schedule_interval()` faster the motion.

@@ -13,7 +13,7 @@ class Foundation1(Widget):
     rad = 60
     inc_pt = [2, 2]  # (magnitude) [x1, y1] ; increment x by 'x1' and y by 'y1' values
     vector1 = [1, 1]  # decides (direction) [x', y'], -1 means subtract, 1 means add
-    win_size = Window.size
+    win_size = Widget.size
     disable_state = BooleanProperty(False)
 
     def __init__(self, **kwargs):
@@ -38,19 +38,19 @@ class Foundation1(Widget):
         if val_x + self.rad >= self.win_size[0]:  # touches right vertical wall
             self.vector1[0] = -1
             self.inc_pt = [random_x, random_y]
-            print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
+            # print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
         if val_y + self.rad >= self.win_size[1]:  # touches top wall
             self.vector1[1] = -1
             self.inc_pt = [random_x, random_y]
-            print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
+            # print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
         if val_x <= 0:  # touches left vertical wall
             self.vector1[0] = 1
             self.inc_pt = [random_x, random_y]
-            print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
+            # print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
         if val_y <= 0:  # touches bottom wall
             self.vector1[1] = 1
             self.inc_pt = [random_x, random_y]
-            print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
+            # print(f"[inc_pt]: {self.inc_pt[0]}, {self.inc_pt[1]}")
 
         val_x += self.inc_pt[0]*self.vector1[0]
         val_y += self.inc_pt[1]*self.vector1[1]
@@ -60,6 +60,7 @@ class Foundation1(Widget):
         # Direction giving / next point -->
         self.start_x, self.start_y = self.direction(self.start_x, self.start_y)
         self.el.pos = (self.start_x, self.start_y)
+        print(f"self.win_size -->{self.win_size[0]}, {self.win_size[1]}")
 
     def repeater(self):
         self.disable_state = True
